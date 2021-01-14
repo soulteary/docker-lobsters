@@ -17,6 +17,7 @@ services:
       - DB_PORT=3306
       - DB_PASS=password
       - DB_USER=root
+      # - SECRET_KEY=
     ports:
       - 80:80
     networks:
