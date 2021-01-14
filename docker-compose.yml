@@ -1,0 +1,27 @@
+version: "2.1"
+
+services:
+  app:
+    image: lobsters
+    environment:
+      - LOBSTER_SITE_NAME="Lobsters News"
+      - LOBSTER_HOSTNAME=localhost
+      #- RAILS_ENV=development
+      - RAILS_ENV=production
+      - RAILS_MAX_THREADS=5
+      - PORT=80
+      - RAILS_LOG_TO_STDOUT=true
+      - RAILS_SERVE_STATIC_FILES=true
+      - DB_NAME=lobsters
+      - DB_HOST=database
+      - DB_PORT=3306
+      - DB_PASS=password
+      - DB_USER=root
+    ports:
+      - 80:80
+    networks:
+      - lobsters
+
+networks:
+  lobsters:
+    external: true

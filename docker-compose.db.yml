@@ -1,0 +1,16 @@
+version: "2.1"
+
+services:
+  database:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=lobsters
+    networks:
+      - lobsters
+    volumes:
+      - ./database:/var/lib/mysql
+
+networks:
+  lobsters:
+    external: true
